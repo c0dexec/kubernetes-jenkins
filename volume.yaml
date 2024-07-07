@@ -22,7 +22,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   local:
-    path: /mnt
+    path: /mnt/data/jenkins
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -30,7 +30,10 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - worker-node01
+            - node2
+            - node3
+            - node4
+            - node5
 
 ---
 apiVersion: v1
